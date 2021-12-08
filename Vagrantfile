@@ -20,7 +20,7 @@ config.vm.box = "ubuntu/focal64"
 
       one.vm.network :private_network, ip: "172.72.72.20"
       one.vm.hostname = "one"
-      one.vm.provision :shell, inline: "sudo apt-get update && sudo curl -fsSL https://get.docker.com | sh"
+      one.vm.provision :shell, inline: "sudo apt-get update && sudo apt install nginx -y && sudo curl -fsSL https://get.docker.com | sh"
     end
     
     config.vm.define :two do |two|
@@ -31,6 +31,6 @@ config.vm.box = "ubuntu/focal64"
 
       two.vm.network :private_network, ip: "172.72.72.30"
       two.vm.hostname = "two"
-      two.vm.provision :shell, inline: "sudo apt-get update && sudo curl -fsSL https://get.docker.com | sh"
+      two.vm.provision :shell, inline: "sudo apt-get update && sudo apt install nginx -y && sudo curl -fsSL https://get.docker.com | sh"
     end
 end
